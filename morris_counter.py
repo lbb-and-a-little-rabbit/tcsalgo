@@ -1,21 +1,22 @@
 import random
 
-def morris_counter(x: int) -> int:
-    if random.random() < 1 / 2 ** x :
+def morris_counter(x: int, a: float) -> int:
+    if random.random() < 1 / (1 + a) ** x :
         x += 1
     return x
 
 result = []
 k = 100
 n = 10 ** 5
+a = 0.1  # 0 < a <= 1
 
 for _ in range(k) :
     x = 0
 
     for i in range(0, n) :
-        x = morris_counter(x)
+        x = morris_counter(x, a)
     
-    result.append(2 ** x - 1)
+    result.append((((1 + a) ** x) - 1) / a)
 
 res = sum(result) / k
 
