@@ -26,6 +26,6 @@ with open("test_data.txt", "r") as f :
 
 print(f"真实的去重词数 (F0): {len(word_set)}")
 
-print(f"Flajolet_Martin Algorithm 估算去重次数(F1): {Flajolet_Martin('test_data.txt')}")
+print(f"Flajolet_Martin Algorithm 估算去重词数(F1): {Flajolet_Martin('test_data.txt')}")
 
-print(f"Flajolet_Martin Algorithm median trick 估算去重次数(F2): {median_trick('test_data.txt', 20)}")
+print(f"Flajolet_Martin Algorithm median trick 估算去重词数(F2): {median_trick('test_data.txt', 20)}")

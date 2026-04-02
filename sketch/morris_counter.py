@@ -18,7 +18,8 @@ for _ in range(k) :
     
     result.append((((1 + a) ** x) - 1) / a)
 
-res = sum(result) / k
+res = sum(result) / k  # morris +
+                       # morris ++ : median(t * morris +)
 
 print("n = ",end = "")
 print(n)

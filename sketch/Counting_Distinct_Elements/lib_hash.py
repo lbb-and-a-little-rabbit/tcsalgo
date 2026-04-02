@@ -57,3 +57,14 @@ def min_sketch_hash(element, seed, width):
     # 3. 转为整数并对宽度取模
     h_int = int(h_hex, 16)
     return h_int % width
+
+def g_sketch_hash(element, seed = 0):
+    """
+    g(x) -> {+1, -1}
+    """
+    s = str(element) + str(seed) + "sign" # 加个后缀防止与 h(x) 冲突
+    h_hex = hashlib.md5(s.encode('utf-8')).hexdigest()
+    h_int = int(h_hex, 16)
+    
+    # 偶数返回 1，奇数返回 -1
+    return 1 if h_int % 2 == 0 else -1
