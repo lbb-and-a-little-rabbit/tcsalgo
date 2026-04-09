@@ -103,7 +103,7 @@ with open("test_data.txt", "r") as f:
                 word_map[word] = 1
             else:
                 word_map[word] += 1
-            if word_map[word] >= 2000:
+            if word_map[word] >= threshold:
                 true_heavy_hitter.append(word)
                 word_map[word] -= N
 
